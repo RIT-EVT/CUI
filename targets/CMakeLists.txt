@@ -1,3 +1,2 @@
-# Add all targets
 add_subdirectory(blinkUtil)
-add_subdirectory(CUI)
+add_subdirectory(BIKE-CUI)

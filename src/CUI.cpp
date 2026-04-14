@@ -1,3 +1,3 @@
-#include <BOARD_NAME.hpp>
+#include <CUI.hpp>
 
-namespace BOARD_NAME {}
+namespace CUI {}

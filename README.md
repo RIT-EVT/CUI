@@ -1,4 +1,4 @@
-# CUI
+# BIKE-CUI
 
 ## Introduction
 
