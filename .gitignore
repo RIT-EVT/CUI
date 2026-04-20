@@ -17,3 +17,6 @@ venv/
 
 # macOS files
 .DS_Store
+
+# my cmake is using the wrong compiler
+cmake/
