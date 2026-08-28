@@ -11,6 +11,7 @@
 #include <core/manager.hpp>
 
 namespace io = core::io;
+namespace dev = core::dev;
 
 constexpr io::Pin UART_TX = io::Pin::PA_9;
 constexpr io::Pin UART_RX = io::Pin::PA_10;
@@ -25,6 +26,23 @@ constexpr io::Pin CAN_TX = io::Pin::PB_13;
 constexpr io::Pin SPI_SCK = io::Pin::PB_10;
 constexpr io::Pin SPI_MOSI = io::Pin::PC_1;
 constexpr io::Pin SPI_MISO = io::Pin::PC_2;
+
+constexpr io::Pin BTN_UP = io::Pin::PC_13;
+constexpr io::Pin BTN_DOWN = io::Pin::PC_14;
+constexpr io::Pin BTN_LEFT = io::Pin::PH_1;
+constexpr io::Pin BTN_RIGHT = io::Pin::PC_15;
+constexpr io::Pin BTN_CENTER = io::Pin::PH_0;
+
+constexpr io::Pin ENC_A = io::Pin::PA_4; //clockwise leading active low
+constexpr io::Pin ENC_B = io::Pin::PA_5; //counter clockwise leading active low
+constexpr io::Pin ENC_1 = io::Pin::PA_6; //push button active low
+
+constexpr io::Pin USB_DN = io::Pin::PB_14;
+constexpr io::Pin USB_DP = io::Pin::PB_15;
+
+constexpr io::Pin CHARGE_STATUS = io::Pin::PC_5;
+constexpr io::Pin BAL_N = io::Pin::PC_6; //need to drive high when PACK+ < 6V
+constexpr io::Pin PACK_F = io::Pin::PC_4; //ADC for estimating battery SOC using lookup table, voltage read x 2.65 = actual battery voltage
 
 io::GPIO* devices[1];
 
@@ -43,13 +61,13 @@ int main() {
 
     // Setup GPIO LED's
     io::GPIO& gpio1 = io::getGPIO<GPIO_LED1>();
-    core::dev::LED led1 = core::dev::LED(gpio1, core::dev::LED::ActiveState::LOW);
+    dev::LED led1 = dev::LED(gpio1, dev::LED::ActiveState::LOW);
 
     io::GPIO& gpio2 = io::getGPIO<GPIO_LED2>();
-    core::dev::LED led2 = core::dev::LED(gpio2, core::dev::LED::ActiveState::LOW);
+    dev::LED led2 = dev::LED(gpio2, dev::LED::ActiveState::LOW);
 
     io::GPIO& gpio3 = io::getGPIO<GPIO_LED3>();
-    core::dev::LED led3 = core::dev::LED(gpio3, core::dev::LED::ActiveState::LOW);
+    dev::LED led3 = dev::LED(gpio3, dev::LED::ActiveState::LOW);
 
     // String to store user input
     char buf[100];
