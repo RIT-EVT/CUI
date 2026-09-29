@@ -16,6 +16,12 @@ if(NOT TARGET_DEV)
     set(TARGET_DEV "STM32F334x8")
 endif()
 
+option(USE_RTOS "USE RTOS" 1)
+if(NOT USE_RTOS)
+    message(WARNING "RTOS enabled by default")
+    set(USE_RTOS 1)
+endif()
+
 if(TARGET_DEV STREQUAL "STM32F302x8")
     add_compile_definitions(STM32F302x8)
     add_compile_definitions(STM32F3xx)

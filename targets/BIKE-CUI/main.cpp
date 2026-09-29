@@ -40,6 +40,13 @@ constexpr io::Pin ENC_1 = io::Pin::PA_6; //push button active low
 constexpr io::Pin USB_DN = io::Pin::PB_14;
 constexpr io::Pin USB_DP = io::Pin::PB_15;
 
+constexpr io::Pin SDIO_D0 = io::Pin::PC_8;
+constexpr io::Pin SDIO_D1 = io::Pin::PB_0;
+constexpr io::Pin SDIO_D2 = io::Pin::PB_1;
+constexpr io::Pin SDIO_D3 = io::Pin::PC_11;
+constexpr io::Pin SDIO_CMD = io::Pin::PD_2;
+constexpr io::Pin SDIO_CLK = io::Pin::PB_2;
+
 constexpr io::Pin CHARGE_STATUS = io::Pin::PC_5;
 constexpr io::Pin BAL_N = io::Pin::PC_6; //need to drive high when PACK+ < 6V
 constexpr io::Pin PACK_F = io::Pin::PC_4; //ADC for estimating battery SOC using lookup table, voltage read x 2.65 = actual battery voltage
